@@ -21,7 +21,7 @@ public class CustomerController {
 
     @GetMapping(value = "/{id}", produces = "application/json")
     public Customer getCustomer(@PathVariable("id") Long id) {
-        return customerRepository.findOne(id);
+        return customerRepository.findById(id).get();
     }
 
     @GetMapping(produces = "application/json")

@@ -13,7 +13,7 @@ class CustomerController(val customerRepository: CustomerRepository) {
 
     @GetMapping(value = "/{id}", produces = arrayOf("application/json"))
     fun getCustomer(@PathVariable("id") id: Long): Customer? =
-            customerRepository.findOne(id)
+            customerRepository.findById(id).orElse(null)
 
     @GetMapping(value = "/formatted", produces = arrayOf("application/json"))
     fun getAllCustomersFormatted() =

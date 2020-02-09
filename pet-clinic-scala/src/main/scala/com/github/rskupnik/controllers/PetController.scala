@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation._
 class PetController {
 
   @Autowired
-  var petRepository: PetRepository = null
+  var petRepository: PetRepository = _
 
   @GetMapping(produces = Array("application/json"))
   def getAllPets = petRepository.findAll()
